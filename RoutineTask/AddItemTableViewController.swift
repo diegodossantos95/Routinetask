@@ -56,7 +56,8 @@ class AddItemTableViewController: UITableViewController, UICollectionViewDataSou
             notification.alertTitle = nameTextField.text
             notification.soundName = UILocalNotificationDefaultSoundName
             notification.repeatInterval = NSCalendarUnit.CalendarUnitWeekOfYear
-            notification.userInfo = ["uniqueID" : uniqueID,]
+            notification.userInfo = ["uniqueID" : uniqueID]
+            notification.category = "Task_Notification"
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
         
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
