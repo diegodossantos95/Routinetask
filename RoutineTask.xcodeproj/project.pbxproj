@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F236B911B0A083000B8BED7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F236B901B0A083000B8BED7 /* InterfaceController.swift */; };
+		8F236B931B0A083000B8BED7 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F236B921B0A083000B8BED7 /* NotificationController.swift */; };
+		8F236B951B0A083000B8BED7 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F236B941B0A083000B8BED7 /* GlanceController.swift */; };
+		8F236B971B0A083000B8BED7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F236B961B0A083000B8BED7 /* Images.xcassets */; };
+		8F236B9B1B0A083000B8BED7 /* RoutineTask WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 8F236B9A1B0A083000B8BED7 /* RoutineTask WatchKit App.app */; };
+		8F236BA31B0A083000B8BED7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F236BA11B0A083000B8BED7 /* Interface.storyboard */; };
+		8F236BA51B0A083000B8BED7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F236BA41B0A083000B8BED7 /* Images.xcassets */; };
+		8F236BA81B0A083000B8BED7 /* RoutineTask WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8F236B8B1B0A083000B8BED7 /* RoutineTask WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8F25053F1AF44577008E8803 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F25053E1AF44577008E8803 /* AppDelegate.swift */; };
 		8F2505421AF44577008E8803 /* RoutineTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F2505401AF44577008E8803 /* RoutineTask.xcdatamodeld */; };
 		8F2505471AF44577008E8803 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F2505451AF44577008E8803 /* Main.storyboard */; };
@@ -23,6 +31,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8F236B9C1B0A083000B8BED7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F2505311AF44577008E8803 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F236B991B0A083000B8BED7;
+			remoteInfo = "RoutineTask WatchKit App";
+		};
+		8F236BA61B0A083000B8BED7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F2505311AF44577008E8803 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F236B8A1B0A083000B8BED7;
+			remoteInfo = "RoutineTask WatchKit Extension";
+		};
 		8F2505521AF44577008E8803 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8F2505311AF44577008E8803 /* Project object */;
@@ -39,6 +61,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				8F236BA81B0A083000B8BED7 /* RoutineTask WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +69,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8F236B8B1B0A083000B8BED7 /* RoutineTask WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RoutineTask WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F236B8E1B0A083000B8BED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F236B8F1B0A083000B8BED7 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		8F236B901B0A083000B8BED7 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		8F236B921B0A083000B8BED7 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		8F236B941B0A083000B8BED7 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		8F236B961B0A083000B8BED7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8F236B9A1B0A083000B8BED7 /* RoutineTask WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RoutineTask WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F236BA01B0A083000B8BED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F236BA21B0A083000B8BED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		8F236BA41B0A083000B8BED7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8F2505391AF44577008E8803 /* RoutineTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoutineTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F25053D1AF44577008E8803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F25053E1AF44577008E8803 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +100,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8F236B881B0A083000B8BED7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8F2505361AF44577008E8803 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,11 +124,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F236B8C1B0A083000B8BED7 /* RoutineTask WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8F236B901B0A083000B8BED7 /* InterfaceController.swift */,
+				8F236B921B0A083000B8BED7 /* NotificationController.swift */,
+				8F236B941B0A083000B8BED7 /* GlanceController.swift */,
+				8F236B961B0A083000B8BED7 /* Images.xcassets */,
+				8F236B8D1B0A083000B8BED7 /* Supporting Files */,
+			);
+			path = "RoutineTask WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		8F236B8D1B0A083000B8BED7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F236B8E1B0A083000B8BED7 /* Info.plist */,
+				8F236B8F1B0A083000B8BED7 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8F236B9E1B0A083000B8BED7 /* RoutineTask WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				8F236BA11B0A083000B8BED7 /* Interface.storyboard */,
+				8F236BA41B0A083000B8BED7 /* Images.xcassets */,
+				8F236B9F1B0A083000B8BED7 /* Supporting Files */,
+			);
+			path = "RoutineTask WatchKit App";
+			sourceTree = "<group>";
+		};
+		8F236B9F1B0A083000B8BED7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F236BA01B0A083000B8BED7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		8F2505301AF44577008E8803 = {
 			isa = PBXGroup;
 			children = (
 				8F25053B1AF44577008E8803 /* RoutineTask */,
 				8F2505541AF44577008E8803 /* RoutineTaskTests */,
+				8F236B8C1B0A083000B8BED7 /* RoutineTask WatchKit Extension */,
+				8F236B9E1B0A083000B8BED7 /* RoutineTask WatchKit App */,
 				8F25053A1AF44577008E8803 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,6 +179,8 @@
 			children = (
 				8F2505391AF44577008E8803 /* RoutineTask.app */,
 				8F2505511AF44577008E8803 /* RoutineTaskTests.xctest */,
+				8F236B8B1B0A083000B8BED7 /* RoutineTask WatchKit Extension.appex */,
+				8F236B9A1B0A083000B8BED7 /* RoutineTask WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +249,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8F236B8A1B0A083000B8BED7 /* RoutineTask WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F236BAC1B0A083000B8BED7 /* Build configuration list for PBXNativeTarget "RoutineTask WatchKit Extension" */;
+			buildPhases = (
+				8F236B871B0A083000B8BED7 /* Sources */,
+				8F236B881B0A083000B8BED7 /* Frameworks */,
+				8F236B891B0A083000B8BED7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F236B9D1B0A083000B8BED7 /* PBXTargetDependency */,
+			);
+			name = "RoutineTask WatchKit Extension";
+			productName = "RoutineTask WatchKit Extension";
+			productReference = 8F236B8B1B0A083000B8BED7 /* RoutineTask WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		8F236B991B0A083000B8BED7 /* RoutineTask WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F236BA91B0A083000B8BED7 /* Build configuration list for PBXNativeTarget "RoutineTask WatchKit App" */;
+			buildPhases = (
+				8F236B981B0A083000B8BED7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RoutineTask WatchKit App";
+			productName = "RoutineTask WatchKit App";
+			productReference = 8F236B9A1B0A083000B8BED7 /* RoutineTask WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		8F2505381AF44577008E8803 /* RoutineTask */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F25055B1AF44577008E8803 /* Build configuration list for PBXNativeTarget "RoutineTask" */;
@@ -177,6 +294,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8F236BA71B0A083000B8BED7 /* PBXTargetDependency */,
 			);
 			name = RoutineTask;
 			productName = RoutineTask;
@@ -210,6 +328,12 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Diego dos Santos";
 				TargetAttributes = {
+					8F236B8A1B0A083000B8BED7 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					8F236B991B0A083000B8BED7 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
 					8F2505381AF44577008E8803 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
@@ -234,11 +358,31 @@
 			targets = (
 				8F2505381AF44577008E8803 /* RoutineTask */,
 				8F2505501AF44577008E8803 /* RoutineTaskTests */,
+				8F236B8A1B0A083000B8BED7 /* RoutineTask WatchKit Extension */,
+				8F236B991B0A083000B8BED7 /* RoutineTask WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8F236B891B0A083000B8BED7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F236B9B1B0A083000B8BED7 /* RoutineTask WatchKit App.app in Resources */,
+				8F236B971B0A083000B8BED7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F236B981B0A083000B8BED7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F236BA31B0A083000B8BED7 /* Interface.storyboard in Resources */,
+				8F236BA51B0A083000B8BED7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8F2505371AF44577008E8803 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -259,6 +403,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8F236B871B0A083000B8BED7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F236B931B0A083000B8BED7 /* NotificationController.swift in Sources */,
+				8F236B911B0A083000B8BED7 /* InterfaceController.swift in Sources */,
+				8F236B951B0A083000B8BED7 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8F2505351AF44577008E8803 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -286,6 +440,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8F236B9D1B0A083000B8BED7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F236B991B0A083000B8BED7 /* RoutineTask WatchKit App */;
+			targetProxy = 8F236B9C1B0A083000B8BED7 /* PBXContainerItemProxy */;
+		};
+		8F236BA71B0A083000B8BED7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F236B8A1B0A083000B8BED7 /* RoutineTask WatchKit Extension */;
+			targetProxy = 8F236BA61B0A083000B8BED7 /* PBXContainerItemProxy */;
+		};
 		8F2505531AF44577008E8803 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8F2505381AF44577008E8803 /* RoutineTask */;
@@ -294,6 +458,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8F236BA11B0A083000B8BED7 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F236BA21B0A083000B8BED7 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		8F2505451AF44577008E8803 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -313,6 +485,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8F236BAA1B0A083000B8BED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = RoutineTask_WatchKit_Extension;
+				INFOPLIST_FILE = "RoutineTask WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		8F236BAB1B0A083000B8BED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = RoutineTask_WatchKit_Extension;
+				INFOPLIST_FILE = "RoutineTask WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		8F236BAD1B0A083000B8BED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RoutineTask WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8F236BAE1B0A083000B8BED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "RoutineTask WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		8F2505591AF44577008E8803 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -455,6 +683,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8F236BA91B0A083000B8BED7 /* Build configuration list for PBXNativeTarget "RoutineTask WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F236BAA1B0A083000B8BED7 /* Debug */,
+				8F236BAB1B0A083000B8BED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8F236BAC1B0A083000B8BED7 /* Build configuration list for PBXNativeTarget "RoutineTask WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F236BAD1B0A083000B8BED7 /* Debug */,
+				8F236BAE1B0A083000B8BED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		8F2505341AF44577008E8803 /* Build configuration list for PBXProject "RoutineTask" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
