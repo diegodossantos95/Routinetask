@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14E17e" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--RoutineTask-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="RoutineTask_WatchKit_App" customModuleProvider="target"/>
+                <controller identifier="mainInterfaceView" title="RoutineTask" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="RoutineTask_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" alignment="left" text="WeekDay" id="CQv-dT-swk">
+                            <color key="textColor" red="1" green="0.64313725489999995" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <table alignment="left" id="NKd-hN-t8j">
+                            <items>
+                                <tableRow identifier="tableRow" selectable="NO" id="ob1-sm-Ege">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" animationDuration="1" id="ggd-Xz-qdX">
+                                        <items>
+                                            <label width="1" alignment="left" text="Task                                      Time" numberOfLines="0" id="thN-NT-goI"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <separator width="1" alignment="left" id="zfe-Dc-H9j">
+                            <color key="color" red="1" green="0.64313725489999995" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </separator>
+                    </items>
+                </controller>
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
         </scene>
@@ -30,13 +51,15 @@
             <objects>
                 <notificationController id="YCC-NB-fut">
                     <items>
-                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                        <label alignment="left" text="Alert Label" id="XkS-y5-khE">
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
                     </items>
                     <notificationCategory key="notificationCategory" identifier="Task_Notification" id="JfB-70-Muf">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sashColor" red="1" green="0.58138061143157882" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </notificationCategory>
-                    <color key="backgroundColor" red="1" green="0.51764705882352946" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
                         <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
@@ -48,7 +71,23 @@
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="RoutineTask_WatchKit_App" customModuleProvider="target"/>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="RoutineTask_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" alignment="center" text="AlertBody" textAlignment="center" numberOfLines="0" id="JT4-X3-bCU">
+                            <color key="textColor" red="0.99215686274509807" green="0.42352941176470588" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <label width="1" alignment="center" text="TaskTime" textAlignment="center" numberOfLines="0" id="WZv-CX-A3T">
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                    </items>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="subtitleLabel" destination="WZv-CX-A3T" id="1Dq-V8-drO"/>
+                        <outlet property="titleLabel" destination="JT4-X3-bCU" id="Yjd-wH-FDw"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="553" y="1001"/>
         </scene>

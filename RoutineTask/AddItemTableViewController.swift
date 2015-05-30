@@ -12,10 +12,11 @@ import CoreData
 
 class AddItemTableViewController: UITableViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
+    @IBOutlet weak var notificationTimePicker: UIDatePicker!
     @IBOutlet weak var descField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var timePicker: UIDatePicker!
+    @IBOutlet weak var taskTimePicker: UIDatePicker!
     let weekDays : [String] = ["Su","Mo","Tu","We","Th","Fr","Sa"]
     var selectedIndexPath : NSIndexPath?
 
@@ -39,7 +40,7 @@ class AddItemTableViewController: UITableViewController, UICollectionViewDataSou
         if (nameTextField.text != "" && selectedIndexPath != nil){
         
             var calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-            var time = timePicker.date
+            var time = notificationTimePicker.date
             var units = NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitWeekOfYear | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitWeekday
             var componentsForFireDate = calendar?.components(units , fromDate: time)
 
@@ -48,15 +49,20 @@ class AddItemTableViewController: UITableViewController, UICollectionViewDataSou
             let fireDateOfNotification = calendar?.dateFromComponents(componentsForFireDate!)
         
             let uniqueID = NSUUID().UUIDString
-        
+            
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = .NoStyle
+            formatter.timeStyle = .ShortStyle
+            let notificationTimeString = formatter.stringFromDate(taskTimePicker.date)
+            
             let notification  = UILocalNotification()
             notification.fireDate = fireDateOfNotification
             notification.timeZone = NSTimeZone.localTimeZone()
-            notification.alertBody = descField.text
+            notification.alertBody = descField.text + ". Today, " + notificationTimeString
             notification.alertTitle = nameTextField.text
             notification.soundName = UILocalNotificationDefaultSoundName
             notification.repeatInterval = NSCalendarUnit.CalendarUnitWeekOfYear
-            notification.userInfo = ["uniqueID" : uniqueID]
+            notification.userInfo = ["uniqueID" : uniqueID, "taskTimeForWatch" : notificationTimeString, "bodyForWatch" :descField.text]
             notification.category = "Task_Notification"
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
         
@@ -122,8 +128,8 @@ class AddItemTableViewController: UITableViewController, UICollectionViewDataSou
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (section == 0 || section == 1){
-            return 1
+        if (section == 0){
+            return 3
         }
         return 2
     }

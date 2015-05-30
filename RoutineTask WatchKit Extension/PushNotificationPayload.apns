@@ -1,11 +1,14 @@
 {
     "aps": {
         "alert": {
-            "body": "Meeting Now",
-            "title": "Optional title"
+            "body": "Meeting Now with companies",
+            "title": "Meeting"
         },
         "category": "Task_Notification"
     },
     
-    "customKey": "Notification Test"
+    "bodyForWatch": "English Class",
+    
+    "taskTimeForWatch": "Today, 12:00 AM"
+    
 }

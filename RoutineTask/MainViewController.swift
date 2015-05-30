@@ -127,12 +127,7 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         default:
             count = saturday.count
         }
-        
-        if count > 0 {
-            var view = UIView()
-            view.backgroundColor = UIColor(red: 1, green: 164/255, blue: 30/255, alpha: 0.5)
-            return view
-        }
+
         return cell.contentView
     }
     
@@ -160,7 +155,7 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         }
         
         if count > 0 {
-            return 1
+            return 0
         }
         return 30
     }

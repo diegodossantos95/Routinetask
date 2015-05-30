@@ -16,4 +16,14 @@ class Item: NSManagedObject {
     @NSManaged var name: String
     @NSManaged var uniqueID: String
 
+    
+    func toDictionary()->NSDictionary{
+        var dic = NSDictionary()
+        dic.setValue(name, forKey: "name")
+//        dic.setValue(desc, forKey: "description")
+//        dic.setValue(uniqueID, forKey: "uniqueID")
+        var string = date.descriptionWithLocale(NSLocale.currentLocale())
+        
+        return dic
+    }
 }
