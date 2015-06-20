@@ -48,6 +48,48 @@
                ReferencedContainer = "container:RoutineTask.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8FB8993A1B1A8B1D000AB427"
+               BuildableName = "DataManagerTests.xctest"
+               BlueprintName = "DataManagerTests"
+               ReferencedContainer = "container:RoutineTask.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8FB899641B1AAF4E000AB427"
+               BuildableName = "DataManagerTests.xctest"
+               BlueprintName = "DataManagerTests"
+               ReferencedContainer = "container:RoutineTask.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8FB8998D1B1C8643000AB427"
+               BuildableName = "CoreDataManagerTests.xctest"
+               BlueprintName = "CoreDataManagerTests"
+               ReferencedContainer = "container:RoutineTask.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -56,6 +98,36 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8FB8993A1B1A8B1D000AB427"
+               BuildableName = "DataManagerTests.xctest"
+               BlueprintName = "DataManagerTests"
+               ReferencedContainer = "container:RoutineTask.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8FB899641B1AAF4E000AB427"
+               BuildableName = "DataManagerTests.xctest"
+               BlueprintName = "DataManagerTests"
+               ReferencedContainer = "container:RoutineTask.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8FB8998D1B1C8643000AB427"
+               BuildableName = "CoreDataManagerTests.xctest"
+               BlueprintName = "CoreDataManagerTests"
+               ReferencedContainer = "container:RoutineTask.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

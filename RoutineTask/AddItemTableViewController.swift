@@ -31,7 +31,6 @@ class AddItemTableViewController: UITableViewController, UICollectionViewDataSou
     }
     
     //Mark: Actions
-    
     @IBAction func cancelPressed(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -87,7 +86,6 @@ class AddItemTableViewController: UITableViewController, UICollectionViewDataSou
     }
     
     //Mark: AlertView
-    
     func alertController(title: String, message: String){
         var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
@@ -95,7 +93,6 @@ class AddItemTableViewController: UITableViewController, UICollectionViewDataSou
     }
     
     //MARK: -Collection View
-    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -126,7 +123,6 @@ class AddItemTableViewController: UITableViewController, UICollectionViewDataSou
     }
     
     // MARK: - Table view data source
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (section == 0){
             return 3
@@ -134,8 +130,7 @@ class AddItemTableViewController: UITableViewController, UICollectionViewDataSou
         return 2
     }
     
-    //MARK: ScrollView 
-    
+    //MARK: ScrollView
     override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         self.view.endEditing(true)
     }
