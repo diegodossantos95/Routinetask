@@ -11,21 +11,37 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
-
+    
+    @IBOutlet weak var table: WKInterfaceTable!
+    var userDefaults = NSUserDefaults(suiteName: "group.routinetask")
+    var tasks : [[String:String]]!
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        // Configure interface objects here.
     }
-
+    
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
+        tasks = self.userDefaults!.objectForKey("tasks") as? [[String:String]]
+        if tasks.count > 0{
+            table.setNumberOfRows(tasks.count, withRowType: "TaskRow")
+            for (index, user) in enumerate(tasks) {
+                if let row = table.rowControllerAtIndex(index) as? TaskRow {
+                    row.rowLabel.setText(tasks[index]["name"])
+                    row.dateLabel.setText(tasks[index]["weekday"])
+                }
+            }
+        }else{
+            table.setNumberOfRows(1, withRowType: "TaskRow")
+            if let row = table.rowControllerAtIndex(0) as? TaskRow {
+                row.rowLabel.setText("No tasks yet")
+                row.dateLabel.setText("")
+            }
+        }
         super.willActivate()
     }
-
+    
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
+    
 }

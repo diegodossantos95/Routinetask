@@ -20,6 +20,8 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     var thursday = NSMutableArray()
     var friday = NSMutableArray()
     var saturday = NSMutableArray()
+    var userDefaults = NSUserDefaults(suiteName: "group.routinetask")
+    var dictionariesToWatch = [[String:String]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,35 +40,54 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         var error: NSError?
         let fetchedResults = managedContext!.executeFetchRequest(fetchRequest, error: &error) as![NSManagedObject]?
         
-        var dateFormat = NSDateFormatter()
-        dateFormat.dateFormat = "e"
+        var dateFormatWeek = NSDateFormatter()
+        dateFormatWeek.dateFormat = "e"
+        
+        let timeFormat = NSDateFormatter()
+        timeFormat.dateStyle = .NoStyle
+        timeFormat.timeStyle = .ShortStyle
         
         if let results = fetchedResults {
             for obj in results{
-                var weekDayString = dateFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
+                var dic = [String:String]()
+                var weekDayString = dateFormatWeek.stringFromDate(obj.valueForKey("date") as! NSDate)
                 switch weekDayString {
                 case "1":
                     sunday.addObject(obj)
+                    dic["weekday"] = "Sunday, " + timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
                 case "2":
                     monday.addObject(obj)
+                    dic["weekday"] = "Monday, " + timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
                 case "3":
                     tuesday.addObject(obj)
+                    dic["weekday"] = "Tuesday, " + timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
                 case "4":
                     wednesday.addObject(obj)
+                    dic["weekday"] = "Wednesday, " + timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
                 case "5":
                     thursday.addObject(obj)
+                    dic["weekday"] = "Thursday, " + timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
                 case "6":
                     friday.addObject(obj)
+                    dic["weekday"] = "Friday, " + timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
                 case "7":
                     saturday.addObject(obj)
+                    dic["weekday"] = "Saturday, " + timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
                 default:
                     NSLog("Error in weekday")
                 }
+                dic["weekdayInt"] = weekDayString
+                dic["time"] = timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
+                dic["name"] = obj.valueForKey("name") as? String
+                dic["desc"] = obj.valueForKey("desc") as? String
+                dictionariesToWatch.append(dic)
             }
         } else {
             self.alertController("Fetch Error :(", message: "Could not fetch \(error), \(error!.userInfo), pelase contact the support.")
         }
-        tableView .reloadData()
+        self.userDefaults!.setObject(dictionariesToWatch, forKey: "tasks")
+        self.userDefaults!.synchronize()
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
