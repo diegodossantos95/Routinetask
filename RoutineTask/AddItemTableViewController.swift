@@ -10,7 +10,7 @@
 import UIKit
 import CoreData
 
-class AddItemTableViewController: UITableViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+class AddItemTableViewController: UITableViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate{
     
     @IBOutlet weak var notificationTimePicker: UIDatePicker!
     @IBOutlet weak var descField: UITextField!
@@ -24,6 +24,8 @@ class AddItemTableViewController: UITableViewController, UICollectionViewDataSou
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
+        descField.delegate = self
+        nameTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +36,11 @@ class AddItemTableViewController: UITableViewController, UICollectionViewDataSou
     
     @IBAction func cancelPressed(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 
     @IBAction func donePressed(sender: UIBarButtonItem) {

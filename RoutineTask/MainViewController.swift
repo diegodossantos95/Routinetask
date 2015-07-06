@@ -144,7 +144,6 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
             
             self.userDefaults!.setObject(self.dictionariesToWatch, forKey: "tasks")
             self.userDefaults!.synchronize()
-            NSLog("Done")
         }
     }
     
