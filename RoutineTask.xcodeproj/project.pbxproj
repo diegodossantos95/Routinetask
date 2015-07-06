@@ -28,6 +28,7 @@
 		8F25056B1AF44756008E8803 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2505661AF44756008E8803 /* MainViewController.swift */; };
 		8F25056C1AF44756008E8803 /* WeekDaysCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2505671AF44756008E8803 /* WeekDaysCollectionViewCell.swift */; };
 		8F2505721AF45F6E008E8803 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2505711AF45F6E008E8803 /* Item.swift */; };
+		8FCD888A1B4AA078005B580F /* TaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD88891B4AA078005B580F /* TaskRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,9 @@
 		8F2505661AF44756008E8803 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8F2505671AF44756008E8803 /* WeekDaysCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDaysCollectionViewCell.swift; sourceTree = "<group>"; };
 		8F2505711AF45F6E008E8803 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		8FCD88891B4AA078005B580F /* TaskRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
+		8FCD888B1B4AA0D3005B580F /* RoutineTask.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RoutineTask.entitlements; sourceTree = "<group>"; };
+		8FCD888C1B4AA0E8005B580F /* RoutineTask WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "RoutineTask WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 		8F236B8C1B0A083000B8BED7 /* RoutineTask WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8FCD888C1B4AA0E8005B580F /* RoutineTask WatchKit Extension.entitlements */,
+				8FCD88891B4AA078005B580F /* TaskRow.swift */,
 				8F236B901B0A083000B8BED7 /* InterfaceController.swift */,
 				8F236B921B0A083000B8BED7 /* NotificationController.swift */,
 				8F236B941B0A083000B8BED7 /* GlanceController.swift */,
@@ -188,6 +194,7 @@
 		8F25053B1AF44577008E8803 /* RoutineTask */ = {
 			isa = PBXGroup;
 			children = (
+				8FCD888B1B4AA0D3005B580F /* RoutineTask.entitlements */,
 				8F2505741AF4607A008E8803 /* AddItem */,
 				8F2505731AF4605C008E8803 /* Main */,
 				8F25053E1AF44577008E8803 /* AppDelegate.swift */,
@@ -330,12 +337,24 @@
 				TargetAttributes = {
 					8F236B8A1B0A083000B8BED7 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = YK3NXBF7NQ;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					8F236B991B0A083000B8BED7 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
 					8F2505381AF44577008E8803 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = YK3NXBF7NQ;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					8F2505501AF44577008E8803 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -410,6 +429,7 @@
 				8F236B931B0A083000B8BED7 /* NotificationController.swift in Sources */,
 				8F236B911B0A083000B8BED7 /* InterfaceController.swift in Sources */,
 				8F236B951B0A083000B8BED7 /* GlanceController.swift in Sources */,
+				8FCD888A1B4AA078005B580F /* TaskRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +540,9 @@
 		8F236BAD1B0A083000B8BED7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "RoutineTask WatchKit Extension/RoutineTask WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -527,6 +550,7 @@
 				INFOPLIST_FILE = "RoutineTask WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -534,9 +558,13 @@
 		8F236BAE1B0A083000B8BED7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "RoutineTask WatchKit Extension/RoutineTask WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "RoutineTask WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -628,6 +656,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RoutineTask/RoutineTask.entitlements;
 				INFOPLIST_FILE = RoutineTask/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -639,6 +668,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RoutineTask/RoutineTask.entitlements;
 				INFOPLIST_FILE = RoutineTask/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -690,6 +720,7 @@
 				8F236BAB1B0A083000B8BED7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F236BAC1B0A083000B8BED7 /* Build configuration list for PBXNativeTarget "RoutineTask WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -698,6 +729,7 @@
 				8F236BAE1B0A083000B8BED7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F2505341AF44577008E8803 /* Build configuration list for PBXProject "RoutineTask" */ = {
 			isa = XCConfigurationList;

@@ -10,12 +10,9 @@
             <objects>
                 <controller identifier="mainInterfaceView" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="RoutineTask_WatchKit_App" customModuleProvider="target">
                     <items>
-<<<<<<< HEAD
-=======
                         <label width="1" alignment="left" text="RoutineTask" textAlignment="center" id="vgp-Od-Zmb">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
->>>>>>> Updates for watch
                         <table alignment="left" id="NKd-hN-t8j">
                             <items>
                                 <tableRow identifier="TaskRow" selectable="NO" id="ob1-sm-Ege" customClass="TaskRow" customModule="RoutineTask_WatchKit_Extension">
@@ -43,8 +40,6 @@
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
         </scene>
-<<<<<<< HEAD
-=======
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
             <objects>
@@ -93,7 +88,6 @@
             </objects>
             <point key="canvasLocation" x="235" y="672"/>
         </scene>
->>>>>>> Updates for watch
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
