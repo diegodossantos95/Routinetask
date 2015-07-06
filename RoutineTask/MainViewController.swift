@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataSource  {
-
+    
     @IBOutlet weak var tableView: UITableView!
     let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var sunday = NSMutableArray()
@@ -22,7 +22,7 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     var saturday = NSMutableArray()
     var userDefaults = NSUserDefaults(suiteName: "group.routinetask")
     var dictionariesToWatch = [[String:String]]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -43,55 +43,108 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         var dateFormatWeek = NSDateFormatter()
         dateFormatWeek.dateFormat = "e"
         
-        let timeFormat = NSDateFormatter()
-        timeFormat.dateStyle = .NoStyle
-        timeFormat.timeStyle = .ShortStyle
-        
         if let results = fetchedResults {
             for obj in results{
-                var dic = [String:String]()
                 var weekDayString = dateFormatWeek.stringFromDate(obj.valueForKey("date") as! NSDate)
                 switch weekDayString {
                 case "1":
                     sunday.addObject(obj)
-                    dic["weekday"] = "Sunday, " + timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
                 case "2":
                     monday.addObject(obj)
-                    dic["weekday"] = "Monday, " + timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
                 case "3":
                     tuesday.addObject(obj)
-                    dic["weekday"] = "Tuesday, " + timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
                 case "4":
                     wednesday.addObject(obj)
-                    dic["weekday"] = "Wednesday, " + timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
                 case "5":
                     thursday.addObject(obj)
-                    dic["weekday"] = "Thursday, " + timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
                 case "6":
                     friday.addObject(obj)
-                    dic["weekday"] = "Friday, " + timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
                 case "7":
                     saturday.addObject(obj)
-                    dic["weekday"] = "Saturday, " + timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
                 default:
                     NSLog("Error in weekday")
                 }
-                dic["weekdayInt"] = weekDayString
-                dic["time"] = timeFormat.stringFromDate(obj.valueForKey("date") as! NSDate)
-                dic["name"] = obj.valueForKey("name") as? String
-                dic["desc"] = obj.valueForKey("desc") as? String
-                dictionariesToWatch.append(dic)
             }
         } else {
             self.alertController("Fetch Error :(", message: "Could not fetch \(error), \(error!.userInfo), pelase contact the support.")
         }
-        self.userDefaults!.setObject(dictionariesToWatch, forKey: "tasks")
-        self.userDefaults!.synchronize()
-        tableView.reloadData()
+        self.tableView.reloadData()
+        self.dictionaryToWatchInBackground()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func dictionaryToWatchInBackground(){
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+            self.dictionariesToWatch.removeAll(keepCapacity: false)
+            let timeFormat = NSDateFormatter()
+            timeFormat.dateStyle = .NoStyle
+            timeFormat.timeStyle = .ShortStyle
+            var dateFormatWeek = NSDateFormatter()
+            dateFormatWeek.dateFormat = "e"
+            var dic = [String:String]()
+            
+            for task in self.sunday{
+                dic["weekday"] = "Sunday, " + timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["weekdayInt"] = dateFormatWeek.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["time"] = timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["name"] = task.valueForKey("name") as? String
+                dic["desc"] = task.valueForKey("desc") as? String
+            }
+            
+            for task in self.monday{
+                dic["weekday"] = "Monday, " + timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["weekdayInt"] = dateFormatWeek.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["time"] = timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["name"] = task.valueForKey("name") as? String
+                dic["desc"] = task.valueForKey("desc") as? String
+            }
+            
+            for task in self.tuesday{
+                dic["weekday"] = "Tuesday, " + timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["weekdayInt"] = dateFormatWeek.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["time"] = timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["name"] = task.valueForKey("name") as? String
+                dic["desc"] = task.valueForKey("desc") as? String
+            }
+            
+            for task in self.wednesday{
+                dic["weekday"] = "Wednesday, " + timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["weekdayInt"] = dateFormatWeek.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["time"] = timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["name"] = task.valueForKey("name") as? String
+                dic["desc"] = task.valueForKey("desc") as? String
+            }
+            
+            for task in self.thursday{
+                dic["weekday"] = "Thursday, " + timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["weekdayInt"] = dateFormatWeek.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["time"] = timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["name"] = task.valueForKey("name") as? String
+                dic["desc"] = task.valueForKey("desc") as? String
+            }
+            
+            for task in self.friday{
+                dic["weekday"] = "Friday, " + timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["weekdayInt"] = dateFormatWeek.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["time"] = timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["name"] = task.valueForKey("name") as? String
+                dic["desc"] = task.valueForKey("desc") as? String
+            }
+            
+            for task in self.saturday{
+                dic["weekday"] = "Saturday, " + timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["weekdayInt"] = dateFormatWeek.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["time"] = timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
+                dic["name"] = task.valueForKey("name") as? String
+                dic["desc"] = task.valueForKey("desc") as? String
+            }
+            
+            self.userDefaults!.setObject(self.dictionariesToWatch, forKey: "tasks")
+            self.userDefaults!.synchronize()
+        }
     }
     
     //Mark: AlertView
@@ -108,7 +161,7 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         
         var cell = tableView.dequeueReusableCellWithIdentifier("headerCell") as! HeaderTableViewCell
         var text = String()
-       
+        
         switch section {
         case 0:
             cell.titleLabel.text  = "Sunday"
@@ -148,7 +201,7 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         default:
             count = saturday.count
         }
-
+        
         return cell.contentView
     }
     
@@ -211,7 +264,7 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! ItemTableViewCell
-
+        
         switch indexPath.section {
         case 0:
             self.customCell(sunday, indexpath: indexPath, cell: cell)
@@ -269,12 +322,12 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
                 var userInfo:Dictionary<String,String!> = notif.userInfo as! Dictionary<String,String!>
                 var uniqueid = userInfo["uniqueID"]
                 if uniqueid == (item.valueForKey("uniqueID") as! String){
-                        UIApplication.sharedApplication().cancelLocalNotification(notif)
+                    UIApplication.sharedApplication().cancelLocalNotification(notif)
                 }
             }
             
             managedContext!.deleteObject(item)
-        
+            
             if !managedContext!.save(nil) {
                 NSLog("Error")
             }
@@ -282,9 +335,11 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
             tableView.endUpdates()
             tableView.reloadData()
+            
+            self.dictionaryToWatchInBackground()
         }
     }
-
+    
     //Mark: Others
     
     func customCell(array: NSMutableArray,indexpath: NSIndexPath, cell: ItemTableViewCell)-> ItemTableViewCell{
