@@ -48,6 +48,12 @@ class GlanceController: WKInterfaceController {
                 }
             }
 
+        }else{
+            table.setNumberOfRows(1, withRowType: "TaskRow")
+            if let row = table.rowControllerAtIndex(0) as? TaskRow {
+                row.rowLabel.setText("No tasks yet")
+                row.dateLabel.setText("")
+            }
         }
         super.willActivate()
     }

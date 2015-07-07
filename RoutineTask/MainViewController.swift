@@ -92,6 +92,7 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
                 dic["time"] = timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
                 dic["name"] = task.valueForKey("name") as? String
                 dic["desc"] = task.valueForKey("desc") as? String
+                self.dictionariesToWatch.append(dic)
             }
             
             for task in self.monday{
@@ -100,6 +101,7 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
                 dic["time"] = timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
                 dic["name"] = task.valueForKey("name") as? String
                 dic["desc"] = task.valueForKey("desc") as? String
+                self.dictionariesToWatch.append(dic)
             }
             
             for task in self.tuesday{
@@ -108,6 +110,7 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
                 dic["time"] = timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
                 dic["name"] = task.valueForKey("name") as? String
                 dic["desc"] = task.valueForKey("desc") as? String
+                self.dictionariesToWatch.append(dic)
             }
             
             for task in self.wednesday{
@@ -116,6 +119,7 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
                 dic["time"] = timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
                 dic["name"] = task.valueForKey("name") as? String
                 dic["desc"] = task.valueForKey("desc") as? String
+                self.dictionariesToWatch.append(dic)
             }
             
             for task in self.thursday{
@@ -124,6 +128,7 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
                 dic["time"] = timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
                 dic["name"] = task.valueForKey("name") as? String
                 dic["desc"] = task.valueForKey("desc") as? String
+                self.dictionariesToWatch.append(dic)
             }
             
             for task in self.friday{
@@ -132,6 +137,7 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
                 dic["time"] = timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
                 dic["name"] = task.valueForKey("name") as? String
                 dic["desc"] = task.valueForKey("desc") as? String
+                self.dictionariesToWatch.append(dic)
             }
             
             for task in self.saturday{
@@ -140,10 +146,12 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
                 dic["time"] = timeFormat.stringFromDate(task.valueForKey("date") as! NSDate)
                 dic["name"] = task.valueForKey("name") as? String
                 dic["desc"] = task.valueForKey("desc") as? String
+                self.dictionariesToWatch.append(dic)
             }
             
             self.userDefaults!.setObject(self.dictionariesToWatch, forKey: "tasks")
             self.userDefaults!.synchronize()
+            NSLog(self.dictionariesToWatch.description)
         }
     }
     

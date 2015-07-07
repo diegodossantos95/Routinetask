@@ -22,7 +22,7 @@ class InterfaceController: WKInterfaceController {
     
     override func willActivate() {
         tasks = self.userDefaults!.objectForKey("tasks") as? [[String:String]]
-        if tasks.count > 0{
+        if tasks != nil && tasks.count > 0{
             table.setNumberOfRows(tasks.count, withRowType: "TaskRow")
             for (index, user) in enumerate(tasks) {
                 if let row = table.rowControllerAtIndex(index) as? TaskRow {
